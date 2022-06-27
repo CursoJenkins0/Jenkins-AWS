@@ -17,6 +17,7 @@ RUN yum -y install mysql
 
 RUN yum -y install epel-release && \
     yum -y install python-pip && \
+    pin install --upgrade pip && \
     pip2.7  install awscli
 
 EXPOSE 22
