@@ -15,10 +15,11 @@ RUN /usr/bin/ssh-keygen -A
 RUN rm -rf /run/nologin
 RUN yum -y install mysql
 
-RUN yum -y install epel-release && \
-    yum -y install python3-pip && \
-    pip3 install --upgrade pip && \
-    pip3  install awscli
+RUN yum -y install epel-release
+RUN yum -y install python3-pip
+RUN pip3 install --upgrade pip
+RUN pip3 install awscli
 
 EXPOSE 22
+
 CMD /usr/sbin/sshd -D
